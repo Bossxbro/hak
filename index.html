@@ -10,21 +10,42 @@
         margin: 0;
         padding: 0;
         font-family: Arial, Helvetica, sans-serif;
-
-        /* Gradient Background */
         background: linear-gradient(135deg, black, #444, #8b0000);
         min-height: 100vh;
         color: white;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         padding: 20px;
+    }
+
+    /* 🔥 Marquee-style text */
+    .marquee-container {
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        position: absolute;
+        top: 10px;
+    }
+
+    .marquee-text {
+        display: inline-block;
+        font-size: 1.6rem;
+        font-weight: bold;
+        animation: marquee 12s linear infinite;
+    }
+
+    @keyframes marquee {
+        from { transform: translateX(100%); }
+        to { transform: translateX(-100%); }
     }
 
     .container {
         text-align: center;
         width: 100%;
         max-width: 400px;
+        margin-top: 60px; /* moved down so marquee doesn’t overlap */
     }
 
     h1 {
@@ -38,7 +59,6 @@
         margin-bottom: 35px;
     }
 
-    /* Social Buttons */
     .links {
         display: flex;
         flex-direction: column;
@@ -67,26 +87,27 @@
         transform: scale(1.03);
     }
 
-    .icon {
-        font-size: 1.3rem;
-    }
+    .icon { font-size: 1.3rem; }
 
-    /* Mobile Adjustments */
     @media (max-width: 600px) {
         h1 { font-size: 2rem; }
         .btn { font-size: 1rem; }
     }
-
 </style>
 </head>
 
 <body>
+
+    <!-- ✨ New Marquee Text -->
+    <div class="marquee-container">
+        <span class="marquee-text">#គិត#ឈឺ💔 #គិត#ឈឺ💔 #គិត#ឈឺ💔 #គិត#ឈឺ💔 #គិត#ឈឺ💔</span>
+    </div>
+
     <div class="container">
         <h1>Jol merl ng luch Sl nh men🎀😘</h1>
         <p>Even if you dont't talk to me, i notice you watching😘😜</p>
 
         <div class="links">
-
             <a href="https://www.facebook.com/share/19SehTXMUY/?mibextid=wwXIfr" target="_blank" class="btn">
                 <span class="icon">😘</span> Facebook
             </a>
@@ -99,12 +120,11 @@
                 <span class="icon">🤬</span> Telegram
             </a>
 
-            <!-- NEW Favorite Song Button -->
             <a href="https://youtu.be/u5CVsCnxyXg?si=Sh51H2Zwdae_mzH1" target="_blank" class="btn">
                 <span class="icon">🌹</span> My fav💔
             </a>
-
         </div>
     </div>
+
 </body>
 </html>
